@@ -1,0 +1,33 @@
+SELECT DISTINCT tr_title, person
+FROM tracks, people, position
+WHERE
+	(tr_artist_id = p_id) and
+	(po_track_id = tr_id) and
+	(po_date BETWEEN '1969-07-01' AND '1969-07-31') and
+	(po_pos <= 10)
+ORDER BY
+	person
+LIMIT
+	100
+;
+
+
++----------------------------------------+-----------------------------------------+
+| tr_title                               | person                                  |
++----------------------------------------+-----------------------------------------+
+| Baby, I Love You                       | Andy Kim                                |
+| Get Back                               | Beatles, The                            |
+| The Ballad Of John And Yoko            | Beatles, The                            |
+| Spinning Wheel                         | Blood, Sweat & Tears                    |
+| Bad Moon Rising                        | Creedence Clearwater Revival            |
+| Love Theme From Romeo & Juliet         | Henry Mancini, His Orchestra and Chorus |
+| What Does It Take (To Win Your Love)   | Jr. Walker & the All Stars              |
+| Too Busy Thinking About My Baby        | Marvin Gaye                             |
+| Good Morning Starshine                 | Oliver                                  |
+| My Cherie Amour                        | Stevie Wonder                           |
+| One                                    | Three Dog Night                         |
+| Crystal Blue Persuasion                | Tommy James and the Shondells           |
+| Color Him Father                       | Winstons, The                           |
+| In The Year 2525 (Exordium & Terminus) | Zager & Evans                           |
++----------------------------------------+-----------------------------------------+
+14 rows in set (0.03 sec)
